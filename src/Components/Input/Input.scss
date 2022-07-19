@@ -1,0 +1,79 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+
+.input-container {
+  position: relative;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  height: 2.25rem;
+  padding: 0 1rem;
+  color: $inject-black;
+  border: 2px solid $inject-black;
+  border-radius: 20px;
+  font-size: 1rem;
+  box-sizing: border-box;
+ 
+  @include tablet {
+    padding: 0 4rem;
+    width: 100%;
+    height: 2.375rem;
+  }
+  @include desktop {
+    padding: 0 4rem;
+
+  }
+
+  &::placeholder {
+    color: $slate;
+  }
+
+  &:focus {
+    border: 4px solid $inject-indigo;
+    outline: none;
+  }
+
+  &[type="file"] {
+    // &::-webkit-search-cancel-button {
+    //   display: none;
+    // }
+    background-color: $white;
+
+    @include tablet {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    @include desktop {
+      margin: 0 auto;
+    }
+  }
+
+ 
+
+  &__label {
+    @extend .p2;
+    color: $slate;
+  }
+
+
+
+  &--textarea {
+    height: auto;
+    padding: 0.75rem 1rem;
+    resize: none;
+  }
+
+  &--dropdown {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    &:focus + .input__icon {
+      color: $inject-indigo;
+    }
+  }
+
+}

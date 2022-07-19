@@ -1,0 +1,13 @@
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/typography' as *;
+
+.label {
+  @extend .h3;
+  display: block;
+  color: $white;
+  // margin-bottom: 0.25rem;
+
+  + .input-container {
+    margin-top: 0.25rem;
+  }
+}

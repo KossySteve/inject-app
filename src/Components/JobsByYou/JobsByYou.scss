@@ -1,0 +1,52 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.job-post-container{
+  margin: 10rem 0;
+}
+.post {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid grey;
+  width: 50%;
+  margin: auto;
+  &__btns {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    @include tablet {
+      flex-flow: row nowrap;
+      margin: 0;
+    }
+  }
+  &__heading {
+    margin: 0;
+    padding: 0;
+  }
+  &__text {
+    text-align: center;
+    color: $inject-indigo;
+  }
+  &__btn {
+    padding: 0.8rem;
+    border: 0;
+    background-color: #4a4a4a;
+  }
+}
+.table {
+  width: 100%;
+  font-size: 1rem;
+  background-color: $inject-black;
+  &__heading {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+  }
+}
+
+.filterit {
+  width: 30px;
+  filter: invert(30%) sepia(81%) saturate(2800%) hue-rotate(280deg)
+    brightness(91%) contrast(124%);
+}

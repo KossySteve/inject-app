@@ -1,0 +1,25 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.dashboard {
+  &__main-container {
+    display: flex;
+    flex-flow: column nowrap;
+    @include desktop {
+      flex-flow: row nowrap;
+    }
+
+    &-box {
+      width: 50%;
+
+      @include tablet {
+        margin-top: 0;
+      }
+    }
+  }
+  &__article {
+    width: 80%;
+    margin: 2rem auto;
+    text-align: center;
+  }
+}

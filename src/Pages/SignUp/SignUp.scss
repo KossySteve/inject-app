@@ -1,0 +1,80 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  @include tablet {
+    margin: 1.5rem 0 0;
+  }
+
+  &__container {
+    width: 100%;
+    background-color: $inject-black;
+    opacity: 0.7;
+    padding: 0 1.5rem;
+    margin-top: 2.8rem;
+    @include tablet {
+      width: 50%;
+    }
+    @include desktop {
+      width: 30%;
+    }
+  }
+  &__title {
+    margin: 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $white;
+  }
+
+  &__subtitle {
+    margin: 1rem 0;
+    color: $inject-indigo;
+  }
+
+  &__button-box {
+    display: flex;
+    flex-direction: row;
+    background-color: $inject-black;
+    border-left: none;
+    border-right: none;
+
+    @include tablet {
+      justify-content: center;
+    }
+  }
+
+  &__button-right {
+    width: 100%;
+    margin-left: 0.5rem;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__button-left {
+    width: 100%;
+    margin-right: 0.5rem;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__input {
+    margin-bottom: 0.8rem;
+    &--pair {
+      display: flex;
+
+     & > * {
+       width: 50%;
+     }
+    }
+  }
+
+  &--signup {
+    padding-top: 2rem;
+  }
+}

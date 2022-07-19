@@ -1,0 +1,100 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+
+.dashboard {
+  display: flex;
+  background-image: url("../../assets/images/aboutus.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50% 30%;
+  background-attachment: fixed;
+  background-color: #f7f7f7;
+  color: $white;
+  flex-flow: column nowrap;
+  margin-top: 2rem;
+  padding-top: 45vh;
+  @include tablet {
+    padding-top: 40vh;
+    padding-bottom: 0;
+    flex-flow: row nowrap;
+    background-size: 60%;
+    background-position: 50% 45%;
+  }
+  &__main {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $inject-black-op;
+    
+    @include tablet {
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+    }
+    @include desktop {
+      display: block;
+      text-align: center;
+    }
+    &--jobsbyyou {
+      @extend .dashboard__main;
+      margin-top: -16rem;
+    }
+  }
+  &__heading {
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: $inject-graphite solid 2px;
+    @include tablet {
+      margin-top: 1rem;
+    }
+  }
+  &__profile-btn {
+    position: fixed;
+    bottom: 0;
+    border: $inject-graphite solid 5px;
+    @include tablet {
+      border: none;
+      border-radius: 0;
+      background-color: transparent;
+      padding: 0.5rem;
+      transition: 0.8s;
+      cursor: pointer;
+      position: absolute;
+      font-size: 2rem;
+      top: 7.5rem;
+      right: 0;
+      color: $inject-indigo;
+    }
+    &:hover {
+      border: $inject-indigo solid 2px;
+    }
+  }
+  &__profile {
+    width: 100%;
+    position: fixed;
+    top: 9.8rem;
+    bottom: 0;
+    transition: 1s;
+    @include tablet {
+      width: 30%;
+      position: fixed;
+      right: 0;
+      top: 5rem;
+      transition: 2s;
+    }
+    &--close {
+      @extend .dashboard__profile;
+      display: none;
+      @include tablet {
+        display: block;
+        width: 0;
+      }
+    }
+    &-btn {
+      @include tablet {
+        position: fixed;
+        top: 5.9rem;
+      }
+    }
+  }
+}

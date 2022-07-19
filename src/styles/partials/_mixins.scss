@@ -1,0 +1,39 @@
+@use "variables" as *;
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+} ;
+
+
+@mixin flexbox-settings($justify, $align-item) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align-item;
+  @content;
+}
+
+@mixin no-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin title-setup {
+  padding: 1.5rem 0 1rem;
+  margin: 0;
+  @include mobile-header-font;
+  @include tablet {
+    @include tablet-header-font;
+  }
+  @include desktop {
+    @include desktop-header-font;
+    margin: 1rem 0;
+  }
+}

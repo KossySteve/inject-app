@@ -1,0 +1,30 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography" as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 4rem;
+  font-family: "Titillium Web";
+  background-color: $inject-black;
+  // background-image: url("../../assets/images/aboutus.png");
+  // background-repeat: no-repeat;
+  // background-size: 100%;
+  // background-position: 50% 30%;
+  // background-attachment: fixed;
+  // background-color: #f7f7f7;
+  color: $inject-tint;
+
+  @include tablet {
+    // background-size: 80%;
+    // background-position: 50% 30%;
+  }
+  @include desktop {
+    background-size: 60%;
+  background-position: 50% 40%
+  }
+}
+a {
+  text-decoration: none;
+}

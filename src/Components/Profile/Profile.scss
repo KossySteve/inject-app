@@ -1,0 +1,80 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/global" as *;
+//$inject-indigo
+.dashboard {
+  &__sidebar {
+    background-color: $inject-black;
+    border: 0;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 80vh;
+    @include tablet {
+      
+    }
+    &-heading {
+      width: 100%;
+      color: $inject-indigo;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      font-size: 1.5rem;
+      @include tablet {
+        flex-direction: column;
+        font-size: 1.2rem;
+      }
+      &--email{
+        @extend .dashboard__sidebar-heading;
+        border-top: 1px solid grey;
+        width:100%;
+        padding-top: 1rem;
+      }
+      &--position{
+        @extend .dashboard__sidebar-heading;
+        border-bottom: 1px solid grey;
+        padding-bottom:1rem;
+        width:100%;
+      }
+    }
+    &-text {
+      color: white;
+      white-space: nowrap;
+      font-size: 0.95rem;
+      font-weight: 100;
+    &--profile {
+      @extend .dashboard__sidebar-text;
+      border-bottom: 1px solid grey;
+      padding-bottom:0.5rem;
+    }
+    &--linkedIn{
+      @extend .dashboard__sidebar-text;
+      color: $inject-indigo;
+      cursor: pointer;
+      margin: 0;
+    }
+    &--resume{
+      @extend .dashboard__sidebar-text--linkedIn;
+    }
+   }
+   &-box{
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     @include tablet {
+      flex-direction: column;
+     }
+
+   }
+  }
+}
+
+.closebtn {
+  padding: 0 2rem;
+  margin-left: auto;
+  &:hover {
+    border: 1px solid $inject-indigo;
+  }
+}
